@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <SeekBar
+        android:id="@+id/menSeekBar"
+        android:layout_width="404dp"
+        android:layout_height="39dp"
+        android:max="30"
+        app:layout_constraintTop_toBottomOf="@+id/menTextView"
+        tools:layout_editor_absoluteX="-1dp" />
+
+    <SeekBar
+        android:id="@+id/womenSeekBar"
+        android:layout_width="404dp"
+        android:layout_height="39dp"
+        android:max="30"
+        app:layout_constraintTop_toBottomOf="@+id/womenTextView"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <SeekBar
+        android:id="@+id/childrenSeekBar"
+        android:layout_width="404dp"
+        android:layout_height="39dp"
+        android:max="30"
+        app:layout_constraintTop_toBottomOf="@+id/childrenTextView2"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/menTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="men: 0"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <TextView
+        android:id="@+id/womenTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="women: 0"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/menSeekBar"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/childrenTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="children: 0"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/womenSeekBar"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/saussageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Saussage: 0"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/childrenSeekBar"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/meatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meat: 0"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/saussageTextView"
+        tools:layout_editor_absoluteX="-1dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/gorjetaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/gorjetaSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/gorjetaSeekBar" />
+
+    <SeekBar
+        android:id="@+id/gorjetaSeekBar"
+        android:layout_width="394dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="76dp"
+        android:max="100"
+        android:progress="1"
+        app:layout_constraintStart_toStartOf="@+id/contaTextView"
+        app:layout_constraintTop_toBottomOf="@+id/contaTextView" />
+
+    <TextView
+        android:id="@+id/contaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Valor da conta:"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/contaEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/contaTextView"
+        app:layout_constraintTop_toTopOf="@+id/contaTextView" />
+
+    <TextView
+        android:id="@+id/porcentagemTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1%"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/gorjetaSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/gorjetaSeekBar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
