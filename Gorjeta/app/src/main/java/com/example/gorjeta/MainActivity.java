@@ -3,6 +3,9 @@ package com.example.gorjeta;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -27,22 +30,78 @@ public class MainActivity extends AppCompatActivity {
         gorjetaTextView = findViewById(R.id.gorjetaTextView);
 
         gorjetaSeekBar.setProgress(1);
+        gorjetaTextView.setText("R$0.00");
+
+        contaEditText.addTextChangedListener(contaListener);
         gorjetaSeekBar.setOnSeekBarChangeListener(gorjetaListener);
 
 
     }
+
+    private TextWatcher contaListener = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+
+                Double result = calculaGorjeta(Double.valueOf(contaEditText.getText().toString()), Double.valueOf(gorjetaSeekBar.getProgress()));
+                gorjetaTextView.setText(String.format("R$%.02f", result));
+
+            } catch (Exception e) {
+
+                gorjetaTextView.setText(String.format("R$%.02f", 0.00));
+                System.out.println("campo editText vaziu");
+                e.printStackTrace();
+
+            }
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+            try {
+
+                Double result = calculaGorjeta(Double.valueOf(contaEditText.getText().toString()), Double.valueOf(gorjetaSeekBar.getProgress()));
+                gorjetaTextView.setText(String.format("R$%.02f", result));
+
+            } catch (Exception e) {
+
+                System.out.println("campo editText vaziu");
+                e.printStackTrace();
+
+            }
+
+        }
+    };
 
     private SeekBar.OnSeekBarChangeListener gorjetaListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
             porcentagemTextView.setText(String.valueOf(progress + "%"));
-            if ( contaEditText.getText() == null || contaEditText.getText() == "") {
 
-                Double result = calculaGorjeta(Double.valueOf(contaEditText.getText().toString()), Double.valueOf(progress));
-//            gorjetaTextView.setText(result.toString());
 
-            }
+                try {
+
+                    Double result = calculaGorjeta(Double.valueOf(contaEditText.getText().toString()), Double.valueOf(progress));
+                    gorjetaTextView.setText(String.format("R$%.02f", result));
+
+                } catch (Exception e) {
+
+                    System.out.println("campo editText vaziu");
+                    e.printStackTrace();
+
+                }
+
+
+
+
 
 
         }
