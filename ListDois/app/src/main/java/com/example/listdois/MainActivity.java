@@ -12,7 +12,8 @@ public class MainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String[] itens = new String[] {"Um", "Dois"};
+        String[] itens = new String[] {"um", "dois"};
+
         ArrayAdapter<String> array = new ArrayAdapter<>(this, android.R.layout.activity_list_item, itens);
         setListAdapter(array);
     }
