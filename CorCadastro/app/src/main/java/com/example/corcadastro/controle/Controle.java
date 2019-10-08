@@ -37,6 +37,8 @@ public class Controle {
 
         String hex;
 
+        hex = "#" + R + G + B;
+
         return hex;
 
     }
