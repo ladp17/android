@@ -1,7 +1,9 @@
 package com.example.corcadastro.controle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -46,6 +48,8 @@ public class PerfilActivity extends AppCompatActivity {
 //            talvez eu queria usar o setBackgroundColor
 //            nomeTextView.setTextColor(getResources(Color.parseColor(Controle.calculaCor())));
 //            nomeTextView.setTextColor(ContextCompat.getColor(Controle.calculaCor(seekBarR.getProgress(), seekBarG.getProgress(), seekBarB.getProgress())));
+//            Color.rgb()
+//            nomeTextView.setTextColor(ContextCompat.getColor(Color.rgb(seekBarR.getProgress(), seekBarG.getProgress(), seekBarB.getProgress())));
         }
 
         @Override
